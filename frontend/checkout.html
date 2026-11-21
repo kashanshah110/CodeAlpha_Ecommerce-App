@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Checkout | NovaStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">Nova<span>Store</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="products.html">Products</a>
+        <a href="cart.html">Cart <span id="cartCount" class="cart-count">0</span></a>
+        <a class="profile-nav-link" href="profile.html" aria-label="My profile" title="My profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+        </a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    </header>
+    <main class="checkout-page">
+      <p class="eyebrow">SECURE CHECKOUT</p>
+      <h1>Delivery details</h1>
+      <p class="sandbox-note prominent">Sandbox checkout only. No payment details are requested and no payment will be collected.</p>
+      <form class="checkout-form" id="checkoutForm">
+        <section class="checkout-card">
+          <h2>Contact information</h2>
+          <label>Full name<input id="customerName" autocomplete="name" readonly required></label>
+          <label>Email address<input id="customerEmail" type="email" autocomplete="email" readonly required></label>
+          <label>Phone number<input name="phone" type="tel" autocomplete="tel" maxlength="40" required></label>
+        </section>
+        <section class="checkout-card">
+          <h2>Shipping address</h2>
+          <label>Street address<input name="address" autocomplete="street-address" maxlength="200" required></label>
+          <div class="checkout-fields">
+            <label>City<input name="city" autocomplete="address-level2" maxlength="100" required></label>
+            <label>Postal code<input name="postalCode" autocomplete="postal-code" maxlength="30" required></label>
+          </div>
+          <label>Country<input name="country" autocomplete="country-name" maxlength="100" required></label>
+        </section>
+        <section class="checkout-card checkout-summary">
+          <h2>Order summary</h2>
+          <div id="checkoutItems"><p class="loading-state">Loading your cart…</p></div>
+          <p class="checkout-total"><span>Total</span><strong id="checkoutTotal">$0.00</strong></p>
+          <button class="primary-btn" id="placeOrderButton" type="submit">Place sandbox order</button>
+          <p id="checkoutMessage" class="form-message" role="status"></p>
+        </section>
+      </form>
+    </main>
+    <script src="js/script.js"></script>
+    <script src="js/checkout.js"></script>
+  </body>
+</html>

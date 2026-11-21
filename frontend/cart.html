@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shopping Cart | NovaStore</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo">Nova<span>Store</span></a>
+      <nav class="nav-links">
+        <a href="index.html">Home</a><a href="products.html">Products</a
+        ><a href="index.html#categories">Categories</a
+        ><a href="index.html#about">About</a>
+        <a href="cart.html" class="cart-btn active"
+          ><i class="fa-solid fa-cart-shopping"></i> Cart
+          <span id="cartCount" class="cart-count">0</span></a
+        >
+        <a
+          class="profile-nav-link"
+          href="profile.html"
+          aria-label="My profile"
+          title="My profile"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21a8 8 0 0 1 16 0"></path>
+          </svg>
+        </a>
+      </nav>
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Toggle navigation"
+      >
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+    <main class="cart-page">
+      <div class="cart-header">
+        <p class="eyebrow">YOUR SELECTION</p>
+        <h1>Shopping Cart</h1>
+        <p>Review your selected products.</p>
+      </div>
+      <div id="cartContainer" class="cart-container"></div>
+    </main>
+    <footer class="footer">
+      <div class="footer-bottom">
+        <p>© 2026 NovaStore. All Rights Reserved.</p>
+        <p>Made with <i class="fa-solid fa-heart"></i> for shoppers.</p>
+      </div>
+    </footer>
+    <script src="js/script.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+  </body>
+</html>

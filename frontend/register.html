@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Register | NovaStore</title>
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <header class="navbar">
+      <a href="index.html" class="logo"> Nova<span>Store</span> </a>
+
+      <nav class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="products.html">Products</a>
+        <a href="index.html#categories">Categories</a>
+        <a href="index.html#about">About</a>
+
+        <a href="cart.html">
+          Cart <span id="cartCount" class="cart-count">0</span>
+        </a>
+        <a
+          class="profile-nav-link"
+          href="profile.html"
+          aria-label="My profile"
+          title="My profile"
+        >
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle cx="12" cy="8" r="4"></circle>
+            <path d="M4 21a8 8 0 0 1 16 0"></path>
+          </svg>
+        </a>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle">
+        <i class="fa-solid fa-bars"></i>
+      </button>
+    </header>
+
+    <main class="auth-page">
+      <form class="auth-card" id="registerForm">
+        <p class="eyebrow">JOIN NOVASTORE</p>
+        <h1>Create Account</h1>
+
+        <label>
+          Full name
+          <input
+            name="name"
+            type="text"
+            required
+            minlength="2"
+            maxlength="80"
+            autocomplete="name"
+            placeholder="Your name"
+          />
+        </label>
+
+        <label>
+          Email
+          <input
+            name="email"
+            type="email"
+            required
+            maxlength="254"
+            autocomplete="email"
+            placeholder="you@example.com"
+          />
+        </label>
+
+        <label>
+          Password
+          <input
+            name="password"
+            type="password"
+            required
+            minlength="8"
+            maxlength="128"
+            autocomplete="new-password"
+            placeholder="Create password"
+          />
+        </label>
+
+        <p id="authMessage" class="form-message" role="status"></p>
+        <button class="primary-btn" type="submit">Register</button>
+
+        <p>Already have an account? <a href="login.html">Login</a></p>
+      </form>
+    </main>
+
+    <script src="js/script.js"></script>
+    <script src="js/register.js"></script>
+  </body>
+</html>

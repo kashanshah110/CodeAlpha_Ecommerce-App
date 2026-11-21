@@ -1,0 +1,6 @@
+NovaStore project
+=================
+
+The customer storefront and admin dashboard are served by the Express app.
+MongoDB stores users, products, sessions, carts, and orders. See README.md
+for setup, initial administrator creation, and the sandbox payment limitation.

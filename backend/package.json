@@ -1,0 +1,28 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "NovaStore Express and MongoDB application",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js",
+    "seed:admin": "node scripts/seedAdmin.js",
+    "check": "node --check server.js && node --check config/db.js && node --check middleware/authMiddleware.js && node --check middleware/adminMiddleware.js && node --check middleware/csrfProtection.js && node --check models/User.js && node --check models/Product.js && node --check models/Order.js && node --check routes/userRoutes.js && node --check routes/productRoutes.js && node --check routes/cartRoutes.js && node --check routes/orderRoutes.js && node --check routes/adminRoutes.js && node --check scripts/seedAdmin.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "connect-mongo": "^5.1.0",
+    "cors": "^2.8.6",
+    "dotenv": "^18.0.9",
+    "express": "^5.3.0",
+    "express-rate-limit": "^8.1.0",
+    "express-session": "^1.18.2",
+    "helmet": "^8.1.0",
+    "mongoose": "^9.11.4",
+    "multer": "^2.5.0"
+  }
+}

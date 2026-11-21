@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard | NovaStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <header class="navbar admin-navbar">
+      <a href="index.html" class="logo">Nova<span>Store</span><small> ADMIN</small></a>
+      <nav class="nav-links">
+        <a href="#overview">Overview</a><a href="#products">Products</a>
+        <a href="#orders">Orders</a><a href="#users">Users</a>
+        <a class="profile-nav-link" href="profile.html" aria-label="My profile" title="My profile">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"></circle><path d="M4 21a8 8 0 0 1 16 0"></path></svg>
+        </a>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
+    </header>
+    <main class="admin-page">
+      <section class="admin-heading">
+        <div><p class="eyebrow">NOVASTORE MANAGEMENT</p><h1>Admin Dashboard</h1></div>
+        <p id="adminMessage" class="form-message" role="status">Checking administrator access…</p>
+      </section>
+      <section id="adminContent" hidden>
+        <section id="overview" class="admin-section">
+          <h2>Overview</h2>
+          <div id="adminSummary" class="admin-stats"></div>
+        </section>
+        <section id="products" class="admin-section">
+          <div class="admin-section-heading"><h2>Products & inventory</h2><button class="secondary-btn" id="newProductButton" type="button">Add product</button></div>
+          <form id="productForm" class="admin-form" hidden>
+            <h3 id="productFormHeading">Add product</h3>
+            <input type="hidden" name="productId">
+            <label>Product name<input name="name" required minlength="2" maxlength="120"></label>
+            <div class="checkout-fields">
+              <label>Category<input name="category" required maxlength="60"></label>
+              <label>Price<input name="price" type="number" min="0" step="0.01" required></label>
+              <label>Compare-at price<input name="oldPrice" type="number" min="0" step="0.01"></label>
+              <label>Stock<input name="stock" type="number" min="0" max="100000" step="1" required></label>
+            </div>
+            <input type="hidden" name="image">
+            <label>Product image<input name="imageFile" type="file" accept="image/jpeg,image/png,image/webp,image/gif" required></label>
+            <p class="image-upload-help">Choose a JPEG, PNG, WebP, or GIF image (up to 5 MB).</p>
+            <img id="productImagePreview" class="product-image-preview" alt="Product image preview" hidden>
+            <p id="productImageMessage" class="form-message" role="status" aria-live="polite"></p>
+            <label>Description<textarea name="description" rows="4" required maxlength="5000"></textarea></label>
+            <div class="admin-form-actions"><button class="primary-btn" type="submit">Save product</button><button class="secondary-btn" id="cancelProductButton" type="button">Cancel</button></div>
+          </form>
+          <p id="productFormMessage" class="form-message" role="status" aria-live="polite"></p>
+          <div id="adminProducts" class="admin-table-wrap"><p class="loading-state">Loading products…</p></div>
+        </section>
+        <section id="orders" class="admin-section">
+          <h2>Orders</h2>
+          <div id="adminOrders" class="admin-table-wrap"><p class="loading-state">Loading orders…</p></div>
+        </section>
+        <section id="users" class="admin-section">
+          <h2>Accounts</h2>
+          <div id="adminUsers" class="admin-table-wrap"><p class="loading-state">Loading accounts…</p></div>
+        </section>
+      </section>
+    </main>
+    <script src="js/script.js"></script>
+    <script src="js/admin.js"></script>
+  </body>
+</html>
